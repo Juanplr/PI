@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="418.0" prefWidth="537.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientejavafx.FXMLInicioSesionController">
+   <children>
+      <Pane prefHeight="418.0" prefWidth="276.0">
+         <children>
+            <ImageView fitHeight="276.0" fitWidth="220.0" layoutX="28.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@recursos/primoC.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="276.0" prefHeight="418.0" prefWidth="261.0">
+         <children>
+            <Label layoutX="72.0" layoutY="34.0" text="Bienvenido" textFill="#282828">
+               <font>
+                  <Font name="Bell MT Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="29.0" layoutY="78.0" prefHeight="42.0" prefWidth="204.0" text="Ingresa tu correo electronico y contraseña para iniciar en el sistema " textAlignment="CENTER" textFill="#545353" wrapText="true" />
+            <TextField fx:id="tfCorreo" layoutX="21.0" layoutY="155.0" prefHeight="25.0" prefWidth="220.0" promptText="ejemplo: examplle@gmail.com" />
+            <Label layoutX="21.0" layoutY="130.0" text="Numero Personal" />
+            <Label layoutX="21.0" layoutY="209.0" text="Contraseña" />
+            <PasswordField fx:id="tpContrasena" layoutX="21.0" layoutY="237.0" prefHeight="25.0" prefWidth="220.0" promptText="28913627" />
+            <Button layoutX="94.0" layoutY="302.0" mnemonicParsing="false" onAction="#clickIngresar" prefHeight="25.0" prefWidth="95.0" text="Ingresar" />
+            <Label fx:id="tfErrorCorreo" layoutX="21.0" layoutY="182.0" prefHeight="17.0" prefWidth="150.0" textFill="#da0c0c" />
+            <Label fx:id="tfErrorContrasena" layoutX="21.0" layoutY="262.0" prefHeight="17.0" prefWidth="150.0" textFill="#e11d1d" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
