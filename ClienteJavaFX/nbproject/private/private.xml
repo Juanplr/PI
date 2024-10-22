@@ -3,12 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/juanl/Documents/IntegracionDeSoluciones/ClienteJavaFX/src/clientejavafx/FXMLInicioSesionController.java</file>
-            <file>file:/C:/Users/juanl/Documents/IntegracionDeSoluciones/ClienteJavaFX/src/pojo/Login.java</file>
-            <file>file:/C:/Users/juanl/Documents/IntegracionDeSoluciones/ClienteJavaFX/src/clientejavafx/FXMLInicioSesion.fxml</file>
-            <file>file:/C:/Users/juanl/Documents/IntegracionDeSoluciones/ClienteJavaFX/src/clientejavafx/FXMLAdminColaborador.fxml</file>
+            <file>file:/C:/Users/juanl/Documents/IntegracionDeSoluciones/ClienteJavaFX/src/clientejavafx/modelo/dao/ColaboradorDAO.java</file>
+            <file>file:/C:/Users/juanl/Documents/IntegracionDeSoluciones/ClienteJavaFX/src/pojo/RespuestaColaborador.java</file>
+            <file>file:/C:/Users/juanl/Documents/IntegracionDeSoluciones/ClienteJavaFX/src/pojo/RespuestaHTTP.java</file>
+            <file>file:/C:/Users/juanl/Documents/IntegracionDeSoluciones/ClienteJavaFX/src/clientejavafx/FXMLPrincipalController.java</file>
+            <file>file:/C:/Users/juanl/Documents/IntegracionDeSoluciones/ClienteJavaFX/src/pojo/Colaborador.java</file>
             <file>file:/C:/Users/juanl/Documents/IntegracionDeSoluciones/ClienteJavaFX/src/clientejavafx/modelo/dao/LoginDAO.java</file>
-            <file>file:/C:/Users/juanl/Documents/IntegracionDeSoluciones/ClienteJavaFX/src/clientejavafx/ClienteJavaFX.java</file>
+            <file>file:/C:/Users/juanl/Documents/IntegracionDeSoluciones/ClienteJavaFX/src/clientejavafx/utilidades/Constantes.java</file>
             <file>file:/C:/Users/juanl/Documents/IntegracionDeSoluciones/ClienteJavaFX/src/clientejavafx/FXMLAdminColaboradorController.java</file>
         </group>
     </open-files>

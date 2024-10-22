@@ -5,14 +5,20 @@
  */
 package clientejavafx;
 
+import clientejavafx.modelo.dao.ColaboradorDAO;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import pojo.Colaborador;
 
 /**
  * FXML Controller class
@@ -20,9 +26,11 @@ import javafx.scene.control.TextField;
  * @author juanl
  */
 public class FXMLAdminColaboradorController implements Initializable {
-
+    
+    private ObservableList<Colaborador> colaboradores;
+            
     @FXML
-    private TableView<?> tvTablaColaboradores;
+    private TableView<Colaborador> tvTablaColaboradores;
     @FXML
     private TableColumn colNoPersonal;
     @FXML
@@ -51,7 +59,24 @@ public class FXMLAdminColaboradorController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        configurarTabla();
+        cargarLaInformacion();
     }    
+    
+    private void configurarTabla(){
+        colNoPersonal.setCellValueFactory(new PropertyValueFactory("noPersonal"));
+        colNombre.setCellValueFactory(new PropertyValueFactory("nombre"));
+        colApellidoPaterno.setCellValueFactory(new PropertyValueFactory("apellidoPaterno"));
+        colApellidoMaterno.setCellValueFactory(new PropertyValueFactory("apellidoMaterno"));
+        colFechaNacimiento.setCellValueFactory(new PropertyValueFactory("fechaNacimiento"));
+        colTelefono.setCellValueFactory(new PropertyValueFactory("telefono"));
+        colTipo.setCellValueFactory(new PropertyValueFactory("rol"));
+    }
+    private void cargarLaInformacion(){
+        colaboradores = FXCollections.observableArrayList();
+        List<Colaborador> lista = ColaboradorDAO.obtenerColaboradores();
+        colaboradores.addAll(lista);
+        tvTablaColaboradores.setItems(colaboradores);
+    }
     
 }

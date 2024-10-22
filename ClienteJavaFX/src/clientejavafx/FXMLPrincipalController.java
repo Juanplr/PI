@@ -20,6 +20,7 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.stage.Modality;
 
 /**
  * FXML Controller class
@@ -52,6 +53,21 @@ public class FXMLPrincipalController implements Initializable {
             Utilidades.mostrarAlerta("Error", "Erro 404", Alert.AlertType.ERROR);
         }catch(RuntimeException e){
             Utilidades.mostrarAlerta("Error", "Erro 404", Alert.AlertType.ERROR);
+        }
+    }
+
+    @FXML
+    private void irAdminColaboradores(ActionEvent event) {
+        try {
+            Stage ecenario = new Stage();
+            Parent administrador = FXMLLoader.load(getClass().getResource("FXMLAdminColaborador.fxml"));
+            Scene scene = new Scene(administrador);
+            ecenario.setScene(scene);
+            ecenario.setTitle("Administrador Colaboradores");
+            ecenario.initModality(Modality.APPLICATION_MODAL);
+            ecenario.showAndWait();
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="427.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientejavafx.FXMLAdminColaboradorController">
+   <children>
+      <TableView fx:id="tvTablaColaboradores" layoutX="21.0" layoutY="78.0" prefHeight="327.0" prefWidth="703.0">
+        <columns>
+          <TableColumn fx:id="colNoPersonal" prefWidth="84.0" text="No Personal" />
+            <TableColumn fx:id="colNombre" prefWidth="77.0" text="Nombre" />
+          <TableColumn fx:id="colApellidoPaterno" minWidth="0.0" prefWidth="121.0" text="Apellido Paterno" />
+            <TableColumn fx:id="colApellidoMaterno" minWidth="0.0" prefWidth="117.0" text="Apellido Materno" />
+            <TableColumn fx:id="colFechaNacimiento" prefWidth="99.0" text="Fecha de nacimineto" />
+            <TableColumn fx:id="colTelefono" prefWidth="104.0" text="Telefono" />
+            <TableColumn fx:id="colTipo" prefWidth="100.0" text="Tipo" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnEditar" layoutX="208.0" layoutY="31.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Editar" />
+      <Button fx:id="btnAgregar" layoutX="318.0" layoutY="31.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Agregar" />
+      <Button fx:id="btnEliminar" layoutX="441.0" layoutY="31.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Eliminar" />
+      <TextField fx:id="tfBuscar" layoutX="21.0" layoutY="34.0" promptText="buscar Colaborador" />
+   </children>
+</AnchorPane>

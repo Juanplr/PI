@@ -4,6 +4,7 @@ package dominio;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.List;
 import mybatis.MyBatisUtil;
 import org.apache.ibatis.session.SqlSession;
 import pojo.Colaborador;
@@ -41,7 +42,26 @@ public class ImpColaborador {
         
         return respuesta;
     }
-    
+    /*public static List<Colaborador> getColaboradores2() throws Exception {
+        List<Colaborador> colaboradores = null;
+        SqlSession conexionBD = MyBatisUtil.obtenerConexion();
+        if (conexionBD != null) {
+            try {
+                colaboradores = conexionBD.selectList("colaborador.getColaboradores");
+                if (colaboradores == null) {
+                    throw new Exception("No se encontraron colaboradores");
+                }
+            } catch (Exception e) {
+                throw new Exception("Error al obtener colaboradores: " + e.getMessage());
+            } finally {
+                conexionBD.close(); // No olvides cerrar la conexión en el finally
+            }
+        } else {
+            throw new Exception("Por el momento no se puede consultar la información.");
+        } 
+        return colaboradores;
+    }*/
+
     
     public static RespuestaColaborador colaborador(String noPersonal){
         RespuestaColaborador respuesta = new RespuestaColaborador();

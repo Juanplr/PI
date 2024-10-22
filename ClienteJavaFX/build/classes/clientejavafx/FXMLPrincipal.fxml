@@ -8,6 +8,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientejavafx.FXMLPrincipalController">
    <children>
-      <Button fx:id="btCerrar" layoutX="36.0" layoutY="14.0" mnemonicParsing="false" onAction="#cerrarSesion" text="Cerrar Sesión" />
+      <Button fx:id="btCerrar" layoutX="23.0" layoutY="24.0" mnemonicParsing="false" onAction="#cerrarSesion" text="Cerrar Sesión" />
+      <Button layoutX="67.0" layoutY="166.0" mnemonicParsing="false" onAction="#irAdminColaboradores" text="Ir a Administrador Colaboradores" />
    </children>
 </AnchorPane>
