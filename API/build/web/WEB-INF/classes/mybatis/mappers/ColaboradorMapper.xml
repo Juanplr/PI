@@ -5,7 +5,7 @@
 <mapper namespace="colaborador">
 
     <select id="getColaboradores" resultType="pojo.Colaborador">
-        SELECT idColaborador,colaborador.nombre,apellidoPaterno,apellidoMaterno,fechaNacimiento,noPersonal,telefono,correo,rfc,curp,colaborador.idRol, rol.nombre as 'rol'
+        SELECT idColaborador,colaborador.nombre,apellidoPaterno,password,apellidoMaterno,fechaNacimiento,noPersonal,telefono,correo,rfc,curp,colaborador.idRol, rol.nombre as 'rol'
         FROM colaborador
         INNER JOIN rol ON rol.idRol = colaborador.idRol;
     </select>
@@ -21,5 +21,25 @@
         INSERT INTO colaborador (nombre,apellidoPaterno,apellidoMaterno,fechaNacimiento,noPersonal, telefono, correo, rfc,curp, password, idRol)
         VALUES(#{nombre},#{apellidoPaterno},#{apellidoMaterno},#{fechaNacimiento},#{noPersonal}, #{telefono}, #{correo}, #{rfc},#{curp}, #{password}, #{idRol});
     </insert>
-
+    
+    <update id="editarColaborador" parameterType="pojo.Colaborador">
+        UPDATE colaborador
+        SET nombre = #{nombre},
+            apellidoPaterno = #{apellidoPaterno},
+            apellidoMaterno = #{apellidoMaterno},
+            fechaNacimiento = #{fechaNacimiento},
+            telefono = #{telefono},
+            correo = #{correo},
+            rfc = #{rfc},
+            curp = #{curp},
+            password = #{password},
+            idRol = #{idRol}
+        WHERE noPersonal = #{noPersonal};
+    </update>
+    
+    <delete id="eliminarColaborador" parameterType="pojo.Colaborador">
+        DELETE FROM colaborador
+        WHERE noPersonal = #{noPersonal};
+    </delete>
+    
 </mapper>

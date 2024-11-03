@@ -93,6 +93,7 @@ public class ImpColaborador {
         
         return respuesta;
     }
+    
     public static Mensaje registrarColaborador(Colaborador colaborador){
         Mensaje respuesta = new Mensaje();
         SqlSession conexionBD = MyBatisUtil.obtenerConexion();
@@ -115,6 +116,58 @@ public class ImpColaborador {
             respuesta.setMensaje("No se puede acceder, intentelo más tarde ");
         }
         
+        return respuesta;
+    }
+    public static Mensaje editarColaborador(Colaborador colaborador){
+        Mensaje mensaje = new Mensaje();
+        SqlSession conexion = MyBatisUtil.obtenerConexion();
+        if(conexion!=null){
+            try {
+                int filasAfectadas = conexion.update("colaborador.editarColaborador", colaborador);
+                conexion.commit(); // Confirma los cambios en la base de datos
+                if (filasAfectadas > 0) {
+                    mensaje.setError(false);
+                    mensaje.setMensaje("Colaborador actualizado exitosamente.");
+                } else {
+                    mensaje.setError(true);
+                    mensaje.setMensaje("No se encontró el colaborador para actualizar.");
+                }
+            } catch (Exception e) {
+                mensaje.setError(true);
+                mensaje.setMensaje(e.getMessage());
+            }
+        }else{
+            mensaje.setError(true);
+            mensaje.setMensaje("Hubo un problema con el sistema, intentalo más tarde ");
+        }
+        return mensaje;
+    }
+    
+    public static Mensaje eliminarColaborador(Colaborador colaborador) {
+        Mensaje respuesta = new Mensaje();
+        SqlSession conexionBD = MyBatisUtil.obtenerConexion();
+        if (conexionBD != null) {
+            try {
+                int filasAfectadas = conexionBD.delete("colaborador.eliminarColaborador", colaborador);
+                conexionBD.commit(); // Confirma los cambios en la base de datos
+                if (filasAfectadas > 0) {
+                    respuesta.setError(false);
+                    respuesta.setMensaje("Colaborador eliminado exitosamente.");
+                } else {
+                    respuesta.setError(true);
+                    respuesta.setMensaje("No se encontró el colaborador para eliminar.");
+                }
+            } catch (Exception e) {
+                conexionBD.rollback(); // Reversión en caso de error
+                respuesta.setError(true);
+                respuesta.setMensaje("Error al eliminar el colaborador: " + e.getMessage());
+            } finally {
+                conexionBD.close(); // Cierra la conexión
+            }
+        } else {
+            respuesta.setError(true);
+            respuesta.setMensaje("No se puede conectar a la base de datos en este momento.");
+        }
         return respuesta;
     }
 }

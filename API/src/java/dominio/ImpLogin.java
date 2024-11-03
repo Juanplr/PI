@@ -22,7 +22,6 @@ public class ImpLogin {
                 parametros.put("noPersonal", noPersonal);
                 parametros.put("password", password);
                 Colaborador colaborador = conexionBD.selectOne("sesion.loginColaborador", parametros);
-                
                 if(colaborador!=null){
                     respuesta.setError(false);
                     respuesta.setMensaje("Credenciales correctas del colaborador" + colaborador.getNombre());

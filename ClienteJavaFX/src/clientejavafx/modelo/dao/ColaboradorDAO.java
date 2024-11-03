@@ -13,6 +13,7 @@ import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
 import java.util.List;
 import pojo.Colaborador;
+import pojo.Mensaje;
 import pojo.RespuestaColaborador;
 import pojo.RespuestaHTTP;
 
@@ -28,6 +29,8 @@ public class ColaboradorDAO {
         if (respuesta.getCodigoRespuesta()==HttpURLConnection.HTTP_OK){
             Gson gson = new Gson();
             try {
+                //enviar una lista.
+                //Type tipoListaColaborador = new TypeToken<List<Colaborador>>(){}.getType();
                 RespuestaColaborador respuestaWS = gson.fromJson(respuesta.getContenido(), RespuestaColaborador.class);
                 colaboradores = respuestaWS.getColaboradores();
             } catch (Exception e) {
@@ -35,5 +38,66 @@ public class ColaboradorDAO {
             }
         }
         return colaboradores;
+    }
+    
+    public static Mensaje registrarColaborador(Colaborador colaborador){
+        Mensaje msj = new Mensaje();
+        String url = Constantes.URL + "colaborador/registrar";
+        Gson gson = new Gson();
+        try {
+            String parametros = gson.toJson(colaborador);
+            RespuestaHTTP respuesta = ConexionWS.peticionPOSTJSON(url, parametros);
+            if(respuesta.getCodigoRespuesta()== HttpURLConnection.HTTP_OK){
+                msj = gson.fromJson(respuesta.getContenido(), Mensaje.class);
+            }else{
+                msj.setError(true);
+                msj.setMensaje(respuesta.getContenido());
+            }
+        } catch (Exception e) {
+            msj.setError(true);
+            msj.setMensaje(e.getMessage());
+        }
+        
+        return msj;
+    }
+    public static Mensaje editarColaborador(Colaborador colaborador){
+        Mensaje msj = new Mensaje();
+        String url = Constantes.URL + "colaborador/editarColaborador";
+        Gson gson = new Gson();
+        try {
+            String parametros = gson.toJson(colaborador);
+            RespuestaHTTP respuesta = ConexionWS.peticionPUTJSON(url, parametros);
+            if(respuesta.getCodigoRespuesta()== HttpURLConnection.HTTP_OK){
+                msj = gson.fromJson(respuesta.getContenido(), Mensaje.class);
+            }else{
+                msj.setError(true);
+                msj.setMensaje(respuesta.getContenido());
+            }
+        } catch (Exception e) {
+            msj.setError(true);
+            msj.setMensaje(e.getMessage());
+        }
+        
+        return msj;
+    }
+    public static Mensaje eliminarColaborador(String noPersonal){
+        Mensaje msj = new Mensaje();
+        String url = Constantes.URL + "colaborador/eliminarColaborador";
+        Gson gson = new Gson();
+        try {
+            String parametros = String.format("noPersonal=%s", noPersonal);
+            RespuestaHTTP respuesta = ConexionWS.peticionDELETE(url, parametros);
+            if(respuesta.getCodigoRespuesta()== HttpURLConnection.HTTP_OK){
+                msj = gson.fromJson(respuesta.getContenido(), Mensaje.class);
+            }else{
+                msj.setError(true);
+                msj.setMensaje(respuesta.getContenido());
+            }
+        } catch (Exception e) {
+            msj.setError(true);
+            msj.setMensaje(e.getMessage());
+        }
+        
+        return msj;
     }
 }

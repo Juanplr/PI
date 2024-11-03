@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientejavafx.FXMLFormularioColaboradorController">
+   <children>
+      <Label layoutX="11.0" layoutY="23.0" text="Nombre:" />
+      <TextField fx:id="tfNombre" layoutX="23.0" layoutY="41.0" />
+      <TextField fx:id="tfApellidoM" layoutX="34.0" layoutY="109.0" />
+      <Label layoutX="6.0" layoutY="88.0" text="Apellido Paterno:" />
+      <Label layoutX="4.0" layoutY="141.0" text="Apellido Materno:" />
+      <TextField fx:id="tfApellidoP" layoutX="40.0" layoutY="158.0" />
+      <Label layoutX="18.0" layoutY="190.0" text="NoPersonal:" />
+      <TextField fx:id="tfNoPersonal" layoutX="50.0" layoutY="207.0" />
+      <Label layoutX="15.0" layoutY="233.0" text="Telefono:" />
+      <TextField fx:id="tfTelefono" layoutX="40.0" layoutY="253.0" />
+      <Label layoutX="324.0" layoutY="47.0" text="Correo:" />
+      <TextField fx:id="tfCorreo" layoutX="377.0" layoutY="45.0" />
+      <Label layoutX="324.0" layoutY="98.0" text="RFC:" />
+      <TextField fx:id="tfRFC" layoutX="354.0" layoutY="94.0" />
+      <Label layoutX="324.0" layoutY="141.0" text="CURP" />
+      <TextField fx:id="tfCurp" layoutX="354.0" layoutY="137.0" />
+      <TextField fx:id="tfContrasena" layoutX="377.0" layoutY="188.0" />
+      <Label layoutX="312.0" layoutY="190.0" text="Contraseña:" />
+      <Label layoutX="324.0" layoutY="233.0" text="Rol:" />
+      <DatePicker fx:id="dpFechaNacimiento" layoutX="39.0" layoutY="307.0" />
+      <Label layoutX="14.0" layoutY="290.0" text="Fecha de nacimiento" />
+      <ComboBox fx:id="cbRol" layoutX="334.0" layoutY="253.0" prefWidth="150.0" />
+      <Button fx:id="btFormulario" layoutX="337.0" layoutY="340.0" mnemonicParsing="false" onAction="#agregarColaborador" text="Agregar" />
+      <Label layoutX="247.0" layoutY="14.0" text="Bienvenido doble P" />
+   </children>
+</AnchorPane>

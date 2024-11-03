@@ -19,9 +19,9 @@
             <TableColumn fx:id="colTipo" prefWidth="100.0" text="Tipo" />
         </columns>
       </TableView>
-      <Button fx:id="btnEditar" layoutX="208.0" layoutY="31.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Editar" />
-      <Button fx:id="btnAgregar" layoutX="318.0" layoutY="31.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Agregar" />
-      <Button fx:id="btnEliminar" layoutX="441.0" layoutY="31.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Eliminar" />
+      <Button layoutX="208.0" layoutY="31.0" mnemonicParsing="false" onAction="#editarColaborador" prefHeight="30.0" prefWidth="90.0" text="Editar" />
+      <Button layoutX="318.0" layoutY="31.0" mnemonicParsing="false" onAction="#agregarColaborador" prefHeight="30.0" prefWidth="90.0" text="Agregar" />
+      <Button layoutX="441.0" layoutY="31.0" mnemonicParsing="false" onAction="#eliminarColaborador" prefHeight="30.0" prefWidth="90.0" text="Eliminar" />
       <TextField fx:id="tfBuscar" layoutX="21.0" layoutY="34.0" promptText="buscar Colaborador" />
    </children>
 </AnchorPane>
