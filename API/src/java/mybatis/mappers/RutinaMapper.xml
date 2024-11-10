@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="rutinas">
+
+    <select id="obtenerRutinas" resultType="pojo.Rutina">
+       SELECT idRutina, r.nombre, r.numeroEjercicios, r.repeticiones, r.idAparato,r.idCliente, r.idColaborador,
+       CONCAT(c.nombre, ' ',c.apellidoPaterno,' ', c.apellidoMaterno) AS nombreCliente, CONCAT(cb.nombre,' ', cb.apellidoPaterno) AS nombreColaborador, a.nombre AS nombreAparato
+       FROM rutina r
+       INNER JOIN cliente c 
+       ON c.idCliente = r.idCliente
+       INNER JOIN colaborador cb 
+       ON cb.idColaborador = r.idColaborador
+       INNER JOIN aparato a 
+       ON a.idAparato = r.idAparato;
+    </select>
+    
+    <select id="obtenerRutinasCliente" resultType="pojo.Rutina" parameterType="int">
+       SELECT idRutina, r.nombre, r.numeroEjercicios, r.repeticiones, r.idAparato,r.idCliente, r.idColaborador,
+       CONCAT(c.nombre, ' ',c.apellidoPaterno,' ', c.apellidoMaterno) AS nombreCliente, CONCAT(cb.nombre,' ', cb.apellidoPaterno) AS nombreColaborador, a.nombre AS nombreAparato
+       FROM rutina r
+       INNER JOIN cliente c 
+       ON c.idCliente = r.idCliente
+       INNER JOIN colaborador cb 
+       ON cb.idColaborador = r.idColaborador
+       INNER JOIN aparato a 
+       ON a.idAparato = r.idAparato
+       WHERE idRutina = ${idCliente};
+    </select>
+
+</mapper>

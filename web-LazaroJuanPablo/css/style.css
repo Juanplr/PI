@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contenedor {
+    max-width: 600px;
+    padding: 20px;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.lista-pagos {
+    margin-top: 15px;
+    max-height: 300px;
+    overflow-y: auto;
+    border-top: 1px solid #DDDDDD;
+    padding: 10px;
+}
+
+.lista-elemento {
+    background-color: #e4f0fe;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #040274;
+    color: #FFF;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+p{
+    
+}

@@ -16,5 +16,6 @@
         INNER JOIN rol ON rol.idRol = cliente.idRol
         WHERE correo = #{correo};
     </select>
+    
 
 </mapper>

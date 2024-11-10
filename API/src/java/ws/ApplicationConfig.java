@@ -35,6 +35,7 @@ public class ApplicationConfig extends Application {
         resources.add(ws.WSOperaciones.class);
         resources.add(ws.WSPagos.class);
         resources.add(ws.WSRol.class);
+        resources.add(ws.WSRutina.class);
     }
     
 }

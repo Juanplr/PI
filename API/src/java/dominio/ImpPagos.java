@@ -6,6 +6,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import mybatis.MyBatisUtil;
 import org.apache.ibatis.session.SqlSession;
+import pojo.Cliente;
 import pojo.Pago;
 
 /**
@@ -36,7 +37,7 @@ public class ImpPagos {
         return new ArrayList<>(); 
        
    } 
-    public static List<Pago> obtenerPagosCliente(Integer idCliente) {
+   public static List<Pago> obtenerPagosCliente(Integer idCliente) {
         SqlSession conexionBD = MyBatisUtil.obtenerConexion();
         if (conexionBD != null) {
             try {
